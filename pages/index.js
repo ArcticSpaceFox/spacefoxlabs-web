@@ -10,8 +10,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="max-w-5xl flex justify-around items-center">
-        <img src="/logo.png" className="h-96 w-96 animate-float" />
+      <div className="max-w-5xl my-4 mx-4 flex-wrap lg:flex-nowrap flex justify-around items-center">
+        <img src="/logo.png" className="h-52 w-52 md:h-96 md:w-96 animate-float" />
         <Transition
           show={true}
           enter="transition-opacity duration-700 delay-150"
@@ -21,9 +21,9 @@ export default function Home() {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <div>
-            <h1 className="text-6xl font-bold tracking-wide text-gray-50 mb-2">Coming soon...</h1>
-            <p className="text-2xl font-light tracking-wider text-gray-300 break-words">Please wait while we are trying to get your <span className="text-pink-600 font-bold">astronomical</span> experience set up</p>
+          <div className="pt-6 text-center md:text-left">
+            <h1 className="lg:text-6xl text-3xl font-bold tracking-wide text-gray-50 mb-2">Coming soon...</h1>
+            <p className="lg:text-2xl text-lg font-light tracking-wider text-gray-300 break-words text-justify">Please wait while we are trying to get your <span className="text-pink-600 font-bold">astronomical</span> experience set up</p>
           </div>
         </Transition>
       </div>
