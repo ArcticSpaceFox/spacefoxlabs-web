@@ -67,7 +67,7 @@ export default function Example() {
                 {/* Contact Btn */}
                 <div className="ml-3 relative">
                   <p className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
-                    <Link href={"#contact"}>
+                    <Link href="#contact">
                       <p className="bg-orange-700 hover:bg-orange-600 text-white px-3 py-2 rounded-md text-sm font-semibold cursor-pointer">
                         Contact
                       </p>

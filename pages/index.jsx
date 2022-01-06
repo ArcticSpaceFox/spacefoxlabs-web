@@ -45,7 +45,10 @@ export default function Home({ repos }) {
         <div className="px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
           {/* Header Section */}
           <div className="max-w-5xl mx-auto md:grid md:grid-cols-2 flex flex-col justify-center">
-            <img src="/img/logo.png" className="w-60 md:w-96 mx-auto md:mx-0" />
+            <img
+              src="/img/logo.png"
+              className="animate-float w-60 md:w-96 mx-auto md:mx-0"
+            />
             <div className="mx-auto md:mx-0">
               <h1 className="text-gray-50 text-4xl md:text-6xl font-semibold tracking-wide">
                 Hi I'm a <span className="text-orange-600">Developer</span>
@@ -191,91 +194,94 @@ export default function Home({ repos }) {
         </section>
 
         {/* Contact */}
-        <section id="contact">
+        <section id="contact" className="mx-4">
           <div className="max-w-5xl mx-auto mt-12 mb-12 md:mt-18 grid grid-cols-1 md:grid-cols-2 gap-4">
+            <h1 className="text-gray-50 text-3xl font-semibold tracking-wide text-center md:hidden">
+              Want to get in contact
+            </h1>
+            <div className="flex justify-center">
+              <img src="/img/planet.png" className="w-64 md:mb-0 -mb-16" />
+            </div>
             <div>
-              <h1 className="text-gray-50 text-3xl font-semibold tracking-wide">
+              <h1 className="hidden text-gray-50 text-3xl font-semibold tracking-wide md:block mb-4">
                 Want to get in contact
               </h1>
-              <div className="flex justify-center">
-                <img src="/img/planet.png" className="w-60 -mb-16 mt-6" />
+              <div className="rounded-lg bg-gray-800 transition-all px-3 py-3 grid grid-cols-1 items-center">
+                <form method="POST" action="https://formspree.io/f/xyyozogp">
+                  <div className="flex gap-2 mb-2">
+                    <input
+                      name="first"
+                      className="form-control
+                              block
+                              w-full
+                              px-3
+                              py-1.5
+                              text-base
+                              font-normal
+                              text-gray-300
+                              bg-gray-800 bg-clip-padding
+                              border border-solid border-gray-700
+                              rounded
+                              transition
+                              ease-in-out
+                              m-0
+                              focus:text-gray-300 focus:border-orange-600 focus:outline-none"
+                      placeholder="John"
+                    />
+                    <input
+                      name="last"
+                      className="form-control
+                              block
+                              w-full
+                              px-3
+                              py-1.5
+                              text-base
+                              font-normal
+                              text-gray-300
+                              bg-gray-800 bg-clip-padding
+                              border border-solid border-gray-700
+                              rounded
+                              transition
+                              ease-in-out
+                              m-0
+                              focus:text-gray-300 focus:border-orange-600 focus:outline-none"
+                      placeholder="Doe"
+                    />
+                  </div>
+                  <input
+                    name="email"
+                    required
+                    className="form-control
+                              block
+                              w-full
+                              px-3
+                              py-1.5
+                              text-base
+                              font-normal
+                              text-gray-300
+                              bg-gray-800 bg-clip-padding
+                              border border-solid border-gray-700
+                              rounded
+                              transition
+                              ease-in-out
+                              m-0
+                              focus:text-gray-300 focus:border-orange-600 focus:outline-none"
+                    placeholder="john.doe@testmail.org"
+                    type="email"
+                  />
+                  <div className="mt-2 flex justify-between">
+                    <p className="text-gray-500 px-3 py-1.5 align-middle">
+                      I will reach out to you
+                    </p>
+                    <button
+                      type="submit"
+                      className="px-3 py-1.5 rounded inline-block bg-orange-600 hover:bg-orange-500 text-gray-100"
+                    >
+                      Submit
+                    </button>
+                  </div>
+                </form>
               </div>
-            </div>
-            <div className="rounded-lg bg-gray-800 transition-all px-3 py-3 grid grid-cols-1 items-center">
-              <form method="POST" action="https://formspree.io/f/xyyozogp">
-                <div className="flex gap-2 mb-2">
-                  <input
-                    name="first"
-                    className="form-control
-                              block
-                              w-full
-                              px-3
-                              py-1.5
-                              text-base
-                              font-normal
-                              text-gray-300
-                              bg-gray-800 bg-clip-padding
-                              border border-solid border-gray-700
-                              rounded
-                              transition
-                              ease-in-out
-                              m-0
-                              focus:text-gray-300 focus:border-orange-600 focus:outline-none"
-                    placeholder="John"
-                  />
-                  <input
-                    name="last"
-                    className="form-control
-                              block
-                              w-full
-                              px-3
-                              py-1.5
-                              text-base
-                              font-normal
-                              text-gray-300
-                              bg-gray-800 bg-clip-padding
-                              border border-solid border-gray-700
-                              rounded
-                              transition
-                              ease-in-out
-                              m-0
-                              focus:text-gray-300 focus:border-orange-600 focus:outline-none"
-                    placeholder="Doe"
-                  />
-                </div>
-                <input
-                  name="email"
-                  required
-                  className="form-control
-                              block
-                              w-full
-                              px-3
-                              py-1.5
-                              text-base
-                              font-normal
-                              text-gray-300
-                              bg-gray-800 bg-clip-padding
-                              border border-solid border-gray-700
-                              rounded
-                              transition
-                              ease-in-out
-                              m-0
-                              focus:text-gray-300 focus:border-orange-600 focus:outline-none"
-                  placeholder="john.doe@testmail.org"
-                  type="email"
-                />
-                <div className="mt-2 flex justify-between">
-                  <p className="text-gray-500 px-3 py-1.5 align-middle">
-                    I will contact you back
-                  </p>
-                  <button
-                    type="submit"
-                    className="px-3 py-1.5 rounded inline-block bg-orange-600 hover:bg-orange-500 text-gray-100"
-                  >
-                    Submit
-                  </button>
-                </div>
-              </form>
             </div>
           </div>
         </section>
