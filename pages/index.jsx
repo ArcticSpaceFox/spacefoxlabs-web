@@ -45,7 +45,10 @@ export default function Home({ repos }) {
         <div className="px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
           {/* Header Section */}
           <div className="max-w-5xl mx-auto md:grid md:grid-cols-2 flex flex-col justify-center">
-            <img src="/img/logo.png" className="w-60 md:w-96 mx-auto md:mx-0" />
+            <Image
+              src="/img/logo.png"
+              className="w-60 md:w-96 mx-auto md:mx-0"
+            />
             <div className="mx-auto md:mx-0">
               <h1 className="text-gray-50 text-4xl md:text-6xl font-semibold tracking-wide">
                 Hi I'm a <span className="text-orange-600">Developer</span>
@@ -198,7 +201,7 @@ export default function Home({ repos }) {
                 Want to get in contact
               </h1>
               <div className="flex justify-center">
-                <img src="/img/planet.png" className="w-60 mt-6" />
+                <Image src="/img/planet.png" className="w-60 mt-6" />
               </div>
             </div>
             <div className="rounded-lg bg-gray-800 transition-all px-3 py-3 grid grid-cols-1 items-center">
