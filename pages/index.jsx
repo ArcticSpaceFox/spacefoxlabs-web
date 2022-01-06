@@ -192,13 +192,13 @@ export default function Home({ repos }) {
 
         {/* Contact */}
         <section id="contact">
-          <div className="max-w-5xl mx-auto mt-12 mb-12 md:mt-18 grid grid-cols-2">
+          <div className="max-w-5xl mx-auto mt-12 mb-12 md:mt-18 grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <h1 className="text-gray-50 text-3xl font-semibold tracking-wide">
                 Want to get in contact
               </h1>
               <div className="flex justify-center">
-                <img src="/img/planet.png" className="w-60 mt-6" />
+                <img src="/img/planet.png" className="w-60 -mb-16 mt-6" />
               </div>
             </div>
             <div className="rounded-lg bg-gray-800 transition-all px-3 py-3 grid grid-cols-1 items-center">
