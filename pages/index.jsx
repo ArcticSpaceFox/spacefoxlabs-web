@@ -2,7 +2,6 @@ import Head from "next/head";
 import Navbar from "../components/navbar";
 
 import Link from "next/link";
-import {} from "@heroicons/react/outline";
 import { FaGithub, FaDev, FaReact } from "react-icons/fa";
 import { SiFlutter, SiRust } from "react-icons/si";
 import axios from "axios";
@@ -41,7 +40,9 @@ export default function Home({ repos }) {
         <link rel="icon" type="image/png" href="/favicon.png" />
       </Head>
       <div className="flex flex-col">
-        <Navbar />
+        <ErrorBoundary>
+          <Navbar />
+        </ErrorBoundary>
         <div className="px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
           {/* Header Section */}
           <div className="max-w-5xl mx-auto md:grid md:grid-cols-2 flex flex-col justify-center">
@@ -288,4 +289,27 @@ export default function Home({ repos }) {
       </div>
     </div>
   );
+}
+
+class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError(error) {
+    // Update state so the next render will show the fallback UI.
+    return { hasError: true };
+  }
+  componentDidCatch(error, errorInfo) {
+    // You can also log the error to an error reporting service
+    logErrorToMyService(error, errorInfo);
+  }
+  render() {
+    if (this.state.hasError) {
+      // You can render any custom fallback UI
+      return <h1>Something went wrong.</h1>;
+    }
+    return this.props.children;
+  }
 }
