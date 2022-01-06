@@ -13,7 +13,7 @@ export async function getStaticProps() {
   let repos = await axios.get(
     "https://api.github.com/users/arcticspacefox/repos",
     {
-      auth: "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",
+      auth: process.env.GHTOKEN,
     }
   );
 
