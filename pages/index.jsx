@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Navbar from "../components/navbar";
+import React from "react";
 
 import Link from "next/link";
 import { FaGithub, FaDev, FaReact } from "react-icons/fa";
