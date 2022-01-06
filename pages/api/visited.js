@@ -4,7 +4,8 @@ export default function handler(req, res) {
   let c = new Cookies(req, res);
   let r = parseInt(c.get("visited"), 10);
 
-  if (r == NaN) {
+  if (r == false) {
+    console.log("cookie wasn't set");
     r = 0;
   }
   r += 1;
