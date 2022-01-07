@@ -4,7 +4,7 @@ export default function handler(req, res) {
   let c = new Cookies(req, res);
   let r = c.get("visited");
 
-  if (r == false || r == "") {
+  if (r == false || r == "" || r == null) {
     console.log("cookie wasn't set");
     r = 0;
   } else {
@@ -15,8 +15,8 @@ export default function handler(req, res) {
   console.log("visited=", r);
 
   c.set("visited", r, {
-    sameSite: "none",
-    secure: false,
+    sameSite: "strict",
+    secure: true,
   });
   res.status(200).json({ visited: r });
 }
