@@ -8,7 +8,6 @@ import { SiFlutter, SiRust } from "react-icons/si";
 import axios from "axios";
 import CountUp from "react-countup";
 import { useEffect, useState } from "react";
-import cookiecut from "cookie-cutter";
 
 export async function getStaticProps() {
   let repos = await axios.get(
@@ -28,11 +27,10 @@ export async function getStaticProps() {
 export default function Home({ repos }) {
   const [visited, setVisited] = useState(0);
 
-  useEffect(() => {
-    fetch("/api/visited");
-    let v = cookiecut.get("visited");
-    v = parseInt(v, 10);
-    setVisited(v);
+  useEffect(async () => {
+    let res = await fetch("/api/visited");
+    res = await res.json();
+    setVisited(res.visited || 0);
   }, []);
 
   return (
